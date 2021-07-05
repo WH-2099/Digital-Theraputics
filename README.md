@@ -178,6 +178,7 @@ TODO:
 - [ ] 需要有无线网络
 
 ## 设置步骤
+
 1. 在 microSD 卡上安装 Raspberry OS 系统
    > 具体内容参见 [Raspberry Pi Setup](https://www.raspberrypi.org/documentation/setup/)
 2. 自行配置联网
@@ -197,9 +198,9 @@ TODO:
    sudo dpkg -i wiringpi-latest.deb
    cd -
    ``` 
-4. 使用 git 下载 [代码]()，并进入其目录
+4. 使用 git 下载代码（项目主页 https://github.com/WH-2099/Digital-Theraputics ），并进入其目录
    ```
-   git clone https://
+   git clone https://github.com/WH-2099/Digital-Theraputics.git
    cd Digital-Theraputics/
    ```
 5. 运行以下命令以安装所需的依赖
@@ -207,6 +208,9 @@ TODO:
    sudo apt-get install -y python3-dev libasound2-dev
    sudo pip3 install -r requirements.txt
    ```
+
+6. 将项目 `arduino` 下的代码上传至 Arduino
+   > 具体内容参见 [Getting Started with Arduino UNO](https://www.arduino.cc/en/Guide/ArduinoUno)
 
 ## 运行步骤
 1. 进入 `Digital-Theraputics` 目录
@@ -217,8 +221,6 @@ TODO:
    ```
    python3 main.py
    ```
-
-
 
 
 ## 紧急关闭
