@@ -11,8 +11,7 @@ from time import monotonic
 
 import PySimpleGUI as sg
 
-# from stimulate import stimulate
-from s import f
+from stimulate import stimulate
 
 
 def loading_window() -> None:
@@ -110,10 +109,14 @@ def running_window() -> None:
         running_event = Event()
         exit_event = Event()
 
-        stimulate_thread = Thread(target=f, args=(running_event, exit_event,config))
-        # stimulate_thread = Thread(
-        #     target=stimulate, kwargs={"running_event": running_event, "exit_event":exit_event,"config": config}
-        # )
+        stimulate_thread = Thread(
+            target=stimulate,
+            kwargs={
+                "running_event": running_event,
+                "exit_event": exit_event,
+                "config": config,
+            },
+        )
 
         stimulate_thread.start()
         running_event.wait()
@@ -169,7 +172,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Frequency", font=(None, 16)),
             sg.Input(
-                default_text=40,
+                default_text="40",
                 font=(None, 16),
                 size=(3, 1),
                 justification="right",
@@ -180,7 +183,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Session Number", font=(None, 16)),
             sg.Input(
-                default_text=2,
+                default_text="2",
                 font=(None, 16),
                 size=(2, 1),
                 justification="right",
@@ -190,7 +193,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Session Duration", font=(None, 16)),
             sg.Input(
-                default_text=1800,
+                default_text="1800",
                 font=(None, 16),
                 size=(5, 1),
                 justification="right",
@@ -201,7 +204,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Session Intervals", font=(None, 16)),
             sg.Input(
-                default_text=60,
+                default_text="60",
                 font=(None, 16),
                 size=(3, 1),
                 justification="right",
@@ -212,7 +215,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Delay", font=(None, 16)),
             sg.Input(
-                default_text=0.0,
+                default_text="0.0",
                 font=(None, 16),
                 size=(5, 1),
                 justification="right",
@@ -247,7 +250,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Frequency", font=(None, 16)),
             sg.Input(
-                default_text=10000,
+                default_text="10000",
                 font=(None, 16),
                 size=(6, 1),
                 justification="right",
@@ -258,7 +261,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Duty Cycle", font=(None, 16)),
             sg.Input(
-                default_text=0.04,
+                default_text="0.04",
                 font=(None, 16),
                 size=(5, 1),
                 justification="right",
@@ -271,7 +274,7 @@ def setting_window() -> None:
         [
             sg.Text(text="Duty Cycle", font=(None, 16)),
             sg.Input(
-                default_text=0.5,
+                default_text="0.5",
                 font=(None, 16),
                 size=(5, 1),
                 justification="right",
